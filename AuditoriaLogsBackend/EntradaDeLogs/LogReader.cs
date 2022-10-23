@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EntradaDeLogs.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,15 +10,21 @@ namespace EntradaDeLogs
 {
     public class LogReader
     {
+        private IFileWrapper _fileWrapper;
 
-
-        public void LerArquivoLog(string path) 
+        public LogReader(IFileWrapper fileWrapper)
         {
-            if (!File.Exists(path))
+            _fileWrapper = fileWrapper;
+        }
+
+        public List<string> LerArquivoLog(string path) 
+        {
+            if (!_fileWrapper.Exists(path))
             {
                 throw new FileNotFoundException("Arquivo não encontrado.");
             }
-        
+
+            return _fileWrapper.ReadLines(path);    
         }
     }
 }
