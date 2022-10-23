@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.32929.386
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntradaDeLogs", "EntradaDeLogs\EntradaDeLogs.csproj", "{0E0167D4-A18D-410F-83B3-455BE89F6BDA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntradaDeLogsTests", "EntradaDeLogsTests\EntradaDeLogsTests.csproj", "{D32C7873-7A34-4DDA-97E1-3A98E4D4DD3B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0E0167D4-A18D-410F-83B3-455BE89F6BDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E0167D4-A18D-410F-83B3-455BE89F6BDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E0167D4-A18D-410F-83B3-455BE89F6BDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D32C7873-7A34-4DDA-97E1-3A98E4D4DD3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D32C7873-7A34-4DDA-97E1-3A98E4D4DD3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D32C7873-7A34-4DDA-97E1-3A98E4D4DD3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D32C7873-7A34-4DDA-97E1-3A98E4D4DD3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
