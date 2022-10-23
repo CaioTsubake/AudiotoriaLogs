@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntradaDeLogs", "EntradaDeL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntradaDeLogsTests", "EntradaDeLogsTests\EntradaDeLogsTests.csproj", "{D32C7873-7A34-4DDA-97E1-3A98E4D4DD3B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConexaoDb", "ConexaoDb\ConexaoDb.csproj", "{7E6318FF-354E-4940-8003-B00F20FAC45D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D32C7873-7A34-4DDA-97E1-3A98E4D4DD3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D32C7873-7A34-4DDA-97E1-3A98E4D4DD3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D32C7873-7A34-4DDA-97E1-3A98E4D4DD3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E6318FF-354E-4940-8003-B00F20FAC45D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E6318FF-354E-4940-8003-B00F20FAC45D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E6318FF-354E-4940-8003-B00F20FAC45D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E6318FF-354E-4940-8003-B00F20FAC45D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
