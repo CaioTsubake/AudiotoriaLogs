@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Interfaces\IFileWrapper.cs" />
     <Compile Include="LogReader.cs" />
+    <Compile Include="FileWrapper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
