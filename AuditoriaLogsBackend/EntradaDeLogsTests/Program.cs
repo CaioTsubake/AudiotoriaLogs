@@ -20,9 +20,8 @@ namespace EntradaDeLogs
             }
 
             ConexaoDb.OperacoesLogs conexao = new ConexaoDb.OperacoesLogs();
-            AuditoriaLog dadosBanco = conexao.GetLogs()[0];
-            Console.WriteLine($"Dados do Banco: Id:{dadosBanco.Id} Data:{dadosBanco.DataHora} Ip:{dadosBanco.Ip} " +
-                                $"Tipo: {dadosBanco.Tipo} Mensagem:{dadosBanco.Mensagem}");
+            AuditoriaLog dadosBanco = conexao.GetLogs();
+            Console.WriteLine($"Dados do Banco: {dadosBanco.Id} {dadosBanco.DataHora} {dadosBanco.Ip} {dadosBanco.Mensagem}");
 
             Console.ReadLine();
 
