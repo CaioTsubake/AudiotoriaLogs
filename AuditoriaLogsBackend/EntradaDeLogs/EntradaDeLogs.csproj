@@ -46,12 +46,18 @@
     <Compile Include="Interfaces\IFileWrapper.cs" />
     <Compile Include="LogReader.cs" />
     <Compile Include="FileWrapper.cs" />
+    <Compile Include="PreparacaoSalvar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ConexaoDb\ConexaoDb.csproj">
+      <Project>{7E6318FF-354E-4940-8003-B00F20FAC45D}</Project>
+      <Name>ConexaoDb</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

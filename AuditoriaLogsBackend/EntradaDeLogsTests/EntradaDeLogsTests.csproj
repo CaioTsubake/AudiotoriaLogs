@@ -70,12 +70,17 @@
   </Choose>
   <ItemGroup>
     <Compile Include="LogReaderTests.cs" />
+    <Compile Include="PreparacaoSalvarTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ConexaoDb\ConexaoDb.csproj">
+      <Project>{7E6318FF-354E-4940-8003-B00F20FAC45D}</Project>
+      <Name>ConexaoDb</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EntradaDeLogs\EntradaDeLogs.csproj">
       <Project>{0E0167D4-A18D-410F-83B3-455BE89F6BDA}</Project>
       <Name>EntradaDeLogs</Name>
