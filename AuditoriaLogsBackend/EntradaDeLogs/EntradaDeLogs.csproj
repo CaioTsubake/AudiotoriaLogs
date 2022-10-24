@@ -47,6 +47,7 @@
     <Compile Include="LogReader.cs" />
     <Compile Include="FileWrapper.cs" />
     <Compile Include="PreparacaoSalvar.cs" />
+    <Compile Include="ProcessamentoLogs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

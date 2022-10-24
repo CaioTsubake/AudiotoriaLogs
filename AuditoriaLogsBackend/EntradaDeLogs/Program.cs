@@ -7,25 +7,11 @@ namespace EntradaDeLogs
     {
         static void Main(string[] args)
         {
-            FileWrapper fileWrapper = new FileWrapper();
-            LogReader logReader = new LogReader(fileWrapper);
-            string filePath = @"C:\Users\caiot\Documents\Profissional\Code\Accenture\auth.log";
-            Console.WriteLine($"Lendo arquivo: {filePath}");
-
-            var linhas = fileWrapper.ReadLines(filePath);
-            // Lendo 5 linhas do arquivo como teste
-            for (int i = 0; i < 5; i++)
-            {
-                Console.WriteLine($"Linha: {linhas[i]}");
-            }
-
-            ConexaoDb.OperacoesLogs conexao = new ConexaoDb.OperacoesLogs();
-            AuditoriaLog dadosBanco = conexao.GetLogs()[0];
-            Console.WriteLine($"Dados do Banco: Id:{dadosBanco.Id} Data:{dadosBanco.DataHora} Ip:{dadosBanco.Ip} " +
-                                $"Tipo: {dadosBanco.Tipo} Mensagem:{dadosBanco.Mensagem}");
+            string filePath = @"C:\Users\caiot\Documents\Profissional\Code\Accenture\test.log";
+            ProcessamentoLogs processamento = new ProcessamentoLogs();
+            processamento.ProcessarLogs(filePath);
 
             Console.ReadLine();
-
         }
     }
 }
