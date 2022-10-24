@@ -12,8 +12,11 @@ namespace EntradaDeLogs
 
             foreach (var linha in inputs)
             {
-                AuditoriaLog log = ParseLog(linha);
-                logs.Add(log);
+                if (!string.IsNullOrEmpty(linha))
+                {
+                    AuditoriaLog log = ParseLog(linha);
+                    logs.Add(log);
+                }
             }
 
             return logs;
