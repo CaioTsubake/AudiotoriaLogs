@@ -20,7 +20,17 @@ namespace ConexaoDb
 
                 return resultado;
             }
-        
+        }
+
+        public void InserirLogs(List<AuditoriaLog> logs) 
+        {
+            var connectionString = @"Server=.\SQLEXPRESS;Database=AuditoriaLogs;Trusted_Connection=True;";
+            var query = "INSERT INTO Logs VALUES (@DataHora, @Ip, @Tipo, @Mensagem)";
+
+            using (var conexao = new SqlConnection(connectionString))
+            {
+                conexao.Execute(query, logs);
+            }
         }
     }
 }

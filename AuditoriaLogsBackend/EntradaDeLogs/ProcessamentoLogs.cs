@@ -13,6 +13,8 @@ namespace EntradaDeLogs
         {
             FileWrapper fileWrapper = new FileWrapper();
             LogReader logReader = new LogReader(fileWrapper);
+            PreparacaoSalvar preparacao = new PreparacaoSalvar();
+            OperacoesLogs conexao = new OperacoesLogs();
             Console.WriteLine($"Lendo arquivo: {filePath}");
 
             var linhas = logReader.LerArquivoLog(filePath);
@@ -21,11 +23,15 @@ namespace EntradaDeLogs
                 Console.WriteLine($"Linha: {linha}");
             }
 
+            var logsAuditoria = preparacao.ConverterLogs(linhas);
+            conexao.InserirLogs(logsAuditoria);
 
-            OperacoesLogs conexao = new OperacoesLogs();
-            AuditoriaLog dadosBanco = conexao.GetLogs()[0];
-            Console.WriteLine($"Dados do Banco: Id:{dadosBanco.Id} Data:{dadosBanco.DataHora} Ip:{dadosBanco.Ip} " +
+            var retornoBanco = conexao.GetLogs();
+            foreach (var dadosBanco in retornoBanco)
+            {
+                Console.WriteLine($"Dados do Banco: Id:{dadosBanco.Id} Data:{dadosBanco.DataHora} Ip:{dadosBanco.Ip} " +
                                 $"Tipo: {dadosBanco.Tipo} Mensagem:{dadosBanco.Mensagem}");
+            }
         }
     }
 }
