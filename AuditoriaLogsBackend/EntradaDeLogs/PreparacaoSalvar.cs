@@ -1,10 +1,24 @@
 ﻿using ConexaoDb;
 using System;
+using System.Collections.Generic;
 
 namespace EntradaDeLogs
 {
     public class PreparacaoSalvar
     {
+        public List<AuditoriaLog> ConverterLogs(List<string> inputs) 
+        {
+            List <AuditoriaLog> logs = new List<AuditoriaLog>();
+
+            foreach (var linha in inputs)
+            {
+                AuditoriaLog log = ParseLog(linha);
+                logs.Add(log);
+            }
+
+            return logs;
+        }
+
         public AuditoriaLog ParseLog(string linha)
         {
             AuditoriaLog log = new AuditoriaLog();
