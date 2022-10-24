@@ -32,5 +32,18 @@ namespace ConexaoDb
                 conexao.Execute(query, logs);
             }
         }
+
+        public List<AuditoriaLog> BuscarPorMensagem(string mensagem) 
+        {
+            var connectionString = @"Server=.\SQLEXPRESS;Database=AuditoriaLogs;Trusted_Connection=True;";
+            var query = $"SELECT * FROM Logs WHERE Mensagem LIKE '%{mensagem}%'";
+
+            using (var conexao = new SqlConnection(connectionString))
+            {
+                var resultado = conexao.Query<AuditoriaLog>(query).ToList();
+
+                return resultado;
+            }
+        }
     }
 }
