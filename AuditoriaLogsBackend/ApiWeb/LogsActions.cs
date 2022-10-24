@@ -1,28 +1,41 @@
 ﻿using ConexaoDb;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace ApiWeb
 {
     public class LogsActions
     {
-        public List<AuditoriaLog> BuscarLogsComMensagem(string mensagem) 
+        private readonly OperacoesLogs _conexao = new OperacoesLogs();
+        public List<AuditoriaLog> BuscarLogsComMensagem(string mensagem)
         {
-            OperacoesLogs conexao = new OperacoesLogs();
-            List<AuditoriaLog> resultadoBusca = conexao.BuscarPorMensagem(mensagem);
+            try
+            {
+                List<AuditoriaLog> resultadoBusca = _conexao.BuscarPorMensagem(mensagem);
 
-            return resultadoBusca;
+                return resultadoBusca;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         public List<AuditoriaLog> BuscarLogsPorPeriodo(string dataInicial, string dataFinal)
         {
-            OperacoesLogs conexao = new OperacoesLogs();
-            var dataHoraInicial = DateTime.Parse(dataInicial);
-            var dataHoraFinal = DateTime.Parse(dataFinal);
+            DateTime dataHoraInicial;
+            DateTime dataHoraFinal;
+            if (!DateTime.TryParse(dataInicial, out dataHoraInicial))
+            {
+                throw new FormatException("Data Inicial em formato invalido.");
+            }
 
-            List<AuditoriaLog> resultadoBusca = conexao.BuscarPorDatas(dataHoraInicial, dataHoraFinal);
+            if (!DateTime.TryParse(dataFinal, out dataHoraFinal))
+            {
+                throw new FormatException("Data Final em formato invalido.");
+            }
+
+            List<AuditoriaLog> resultadoBusca = _conexao.BuscarPorDatas(dataHoraInicial, dataHoraFinal);
 
             return resultadoBusca;
         }
