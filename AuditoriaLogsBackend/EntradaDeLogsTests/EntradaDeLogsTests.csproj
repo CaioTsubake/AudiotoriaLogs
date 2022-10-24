@@ -71,7 +71,6 @@
   <ItemGroup>
     <Compile Include="LogReaderTests.cs" />
     <Compile Include="PreparacaoSalvarTests.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
