@@ -18,6 +18,13 @@ namespace EntradaDeLogs
             stringIp = stringIp.Replace("ip-", "");
             log.Ip = stringIp;
 
+            var comecoTipo = linha.IndexOf(' ', 16);
+            var fimTipo = linha.IndexOf(": ");
+            var tamanhoTipo = fimTipo - comecoTipo;
+            var tipo = linha.Substring(comecoTipo, tamanhoTipo).Trim();
+            log.Tipo = tipo;
+
+
             var inicioMensagem = linha.IndexOf(": ");
             // Avançando 2 caracteres para não incluir ": "
             var mensagem = linha.Substring(inicioMensagem + 2);
