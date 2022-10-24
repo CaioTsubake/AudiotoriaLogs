@@ -23,5 +23,14 @@ namespace ApiWeb.Controllers
 
             return resultado;
         }
+
+        public List<AuditoriaLog> GetLogsPorPeriodo(string dataInicial, string dataFinal)
+        {
+            LogsActions logsActions = new LogsActions();
+
+            List<AuditoriaLog> resultado = logsActions.BuscarLogsPorPeriodo(dataInicial, dataFinal);
+
+            return resultado;
+        }
     }
 }

@@ -15,5 +15,16 @@ namespace ApiWeb
 
             return resultadoBusca;
         }
+
+        public List<AuditoriaLog> BuscarLogsPorPeriodo(string dataInicial, string dataFinal)
+        {
+            OperacoesLogs conexao = new OperacoesLogs();
+            var dataHoraInicial = DateTime.Parse(dataInicial);
+            var dataHoraFinal = DateTime.Parse(dataFinal);
+
+            List<AuditoriaLog> resultadoBusca = conexao.BuscarPorDatas(dataHoraInicial, dataHoraFinal);
+
+            return resultadoBusca;
+        }
     }
 }
