@@ -47,5 +47,20 @@ namespace EntradaDeLogs.Tests
             // Assert
             Assert.AreEqual("CRON[22885]", resultado.Tipo);
         }
+
+        [TestMethod()]
+        public void ParseLog_RetornaLogComDataHora_QuandoRecebeStringLog()
+        {
+            // Arrange
+            string log = @"Nov 30 16:17:01 ip-172-31-27-153 CRON[22885]: pam_unix(cron:session): session opened for user root by (uid=0)";
+            PreparacaoSalvar preparacao = new PreparacaoSalvar();
+            var dataHoraEsperada = new DateTime(2022, 11, 30, 16, 17, 01);
+
+            // Act
+            var resultado = preparacao.ParseLog(log);
+
+            // Assert
+            Assert.AreEqual(dataHoraEsperada, resultado.DataHora);
+        }
     }
 }
