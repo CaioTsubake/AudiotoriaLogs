@@ -1,6 +1,6 @@
 export interface AuditoriaLog {
   Id: number;
-  DataHora: Date;
+  DataHora: string;
   Ip: string;
   Tipo: string;
   Mensagem: string;
