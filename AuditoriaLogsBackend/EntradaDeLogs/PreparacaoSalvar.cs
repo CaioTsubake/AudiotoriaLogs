@@ -37,7 +37,7 @@ namespace EntradaDeLogs
         private DateTime ObterDataHora(string linha)
         {
             var stringDataHora = linha.Substring(0, 15);
-            var partesData = stringDataHora.Split(' ');
+            var partesData = stringDataHora.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
             // Como não sabemos o ano que os logs foram gravados, assumiremos o ano atual
             int ano = DateTime.Now.Year;
 
