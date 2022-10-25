@@ -23,6 +23,8 @@ export class TelaLogsComponent implements OnInit {
   dataSource = new MatTableDataSource(this.LogsRecebidos);
 
   inputMensagem = "";
+  dataInicial = "";
+  dataFinal = "";
 
   pegarTodosOsLogs(){
     this.logsService.pegarTodosOsLogs().subscribe(data => {
@@ -34,6 +36,14 @@ export class TelaLogsComponent implements OnInit {
     this.logsService.pegarLogsComMensagem(this.inputMensagem).subscribe(data => {
       this.LogsRecebidos = data;
     });
+  }
+
+  buscarPorPeriodo(){
+    console.log("buscando por datas: " + this.dataInicial + " " + this.dataFinal);
+    this.logsService.pegarLogsPorPeriodo(this.dataInicial, this.dataFinal).subscribe(data => {
+      this.LogsRecebidos = data;
+    });
+
   }
 
 

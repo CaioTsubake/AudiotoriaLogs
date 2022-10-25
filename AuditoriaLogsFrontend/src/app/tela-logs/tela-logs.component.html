@@ -2,7 +2,14 @@
 
 <label for="campoMensagem">Mensagem</label>
 <input id="campoMensagem" type="text" [(ngModel)]="inputMensagem">
-<input type="button" value="Buscar" (click)="buscarPorMensagem()">
+<input type="button" value="Buscar por Mensagem" (click)="buscarPorMensagem()">
+<br>
+<label for="campoDataInicial">Data Inicial</label>
+<input type="datetime-local" name="campoDataInicial" id="campoDataInicial" [(ngModel)]="dataInicial">
+<br>
+<label for="campoDataFinal">Data Final</label>
+<input type="datetime-local" name="campoDataFinal" id="campoDataFinal" [(ngModel)]="dataFinal">
+<input type="button" value="Buscar por Periodo" (click)="buscarPorPeriodo()">
 
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
