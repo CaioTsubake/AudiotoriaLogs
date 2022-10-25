@@ -13,6 +13,7 @@ namespace EntradaDeLogs
             ProcessamentoLogs processamento = new ProcessamentoLogs();
             processamento.ProcessarLogs(filePath);
 
+            Console.WriteLine("Arquvo processado com sucesso!");
             Console.ReadLine();
         }
     }
