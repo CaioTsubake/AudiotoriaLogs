@@ -1,5 +1,6 @@
 ﻿using ConexaoDb;
 using System;
+using System.Configuration;
 
 namespace EntradaDeLogs
 {
@@ -7,7 +8,8 @@ namespace EntradaDeLogs
     {
         static void Main(string[] args)
         {
-            string filePath = @"C:\Users\caiot\Documents\Profissional\Code\Accenture\test.log";
+
+            string filePath = ConfigurationSettings.AppSettings["pathLogs"];
             ProcessamentoLogs processamento = new ProcessamentoLogs();
             processamento.ProcessarLogs(filePath);
 
