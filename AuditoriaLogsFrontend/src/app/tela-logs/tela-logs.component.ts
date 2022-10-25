@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { AuditoriaLog } from '../model/auditoriaLogs.model';
+import { TelaLogsService } from './tela-logs.service';
 
 @Component({
   selector: 'app-tela-logs',
@@ -9,38 +10,23 @@ import { AuditoriaLog } from '../model/auditoriaLogs.model';
 })
 export class TelaLogsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private logsService: TelaLogsService) { }
 
   ngOnInit(): void {
+    this.pegarTodosOsLogs();
   }
 
   colunasTabela: string[] = ['Id', 'DataHora', 'Ip', 'Tipo', 'Mensagem'];
 
-  LogsRecebidos : AuditoriaLog[] =[
-    {
-      "Id": 2,
-      "DataHora": "2022-11-30T06:39:00",
-      "Ip": "172-31-27-153",
-      "Tipo": "CRON[21882]",
-      "Mensagem": "pam_unix(cron:session): session closed for user root"
-  },
-  {
-      "Id": 3,
-      "DataHora": "2022-11-30T06:47:01",
-      "Ip": "172-31-27-153",
-      "Tipo": "CRON[22087]",
-      "Mensagem": "pam_unix(cron:session): session opened for user root by (uid=0)"
-  },
-  {
-      "Id": 5,
-      "DataHora": "2022-11-30T06:47:03",
-      "Ip": "172-31-27-153",
-      "Tipo": "CRON[22087]",
-      "Mensagem": "pam_unix(cron:session): session closed for user root"
-  },
-  ];
+  LogsRecebidos : AuditoriaLog[] = [];
 
   dataSource = new MatTableDataSource(this.LogsRecebidos);
+
+  pegarTodosOsLogs(){
+    this.logsService.pegarTodosOsLogs().subscribe(data => {
+      this.LogsRecebidos = data;
+    });
+  }
 
 
 
