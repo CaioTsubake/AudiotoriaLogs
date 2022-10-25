@@ -1,5 +1,9 @@
 <h2>Logs da Aplicação</h2>
 
+<label for="campoMensagem">Mensagem</label>
+<input id="campoMensagem" type="text" [(ngModel)]="inputMensagem">
+<input type="button" value="Buscar" (click)="buscarPorMensagem()">
+
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <ng-container [matColumnDef]="column" *ngFor="let column of colunasTabela">

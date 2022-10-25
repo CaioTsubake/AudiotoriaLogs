@@ -22,12 +22,19 @@ export class TelaLogsComponent implements OnInit {
 
   dataSource = new MatTableDataSource(this.LogsRecebidos);
 
+  inputMensagem = "";
+
   pegarTodosOsLogs(){
     this.logsService.pegarTodosOsLogs().subscribe(data => {
       this.LogsRecebidos = data;
     });
   }
 
+  buscarPorMensagem(){
+    this.logsService.pegarLogsComMensagem(this.inputMensagem).subscribe(data => {
+      this.LogsRecebidos = data;
+    });
+  }
 
 
 }
