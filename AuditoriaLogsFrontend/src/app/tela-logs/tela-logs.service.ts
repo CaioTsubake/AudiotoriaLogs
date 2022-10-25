@@ -9,8 +9,17 @@ export class TelaLogsService {
 
   constructor(private http: HttpClient) { }
 
+  dominio = "https://localhost:44314";
+
   pegarTodosOsLogs(){
-    let url = "https://localhost:44314/api/logs?mensagem";
+    let url = `${this.dominio}/api/logs?mensagem`;
+    let resultado = this.http.get<AuditoriaLog[]>(url);
+
+    return resultado;
+  }
+
+  pegarLogsComMensagem(mensagem: string){
+    let url = `${this.dominio}/api/logs?mensagem=${mensagem}`;
     let resultado = this.http.get<AuditoriaLog[]>(url);
 
     return resultado;
