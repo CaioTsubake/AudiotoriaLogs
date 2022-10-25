@@ -24,4 +24,11 @@ export class TelaLogsService {
 
     return resultado;
   }
+
+  pegarLogsPorPeriodo(dataInicial: string, dataFinal: string){
+    let url = `${this.dominio}logs?dataInicial=${dataInicial}&dataFinal=${dataFinal}}`;
+    let resultado = this.http.get<AuditoriaLog[]>(url);
+
+    return resultado;
+  }
 }
