@@ -21,7 +21,7 @@ namespace EntradaDeLogs
 
             var logsAuditoria = preparacao.ConverterLogs(linhas);
             conexao.InserirLogs(logsAuditoria);
-
+            Console.WriteLine($"Arquivo processado com sucesso. {logsAuditoria.Count} logs foram adicionados.");
         }
     }
 }
